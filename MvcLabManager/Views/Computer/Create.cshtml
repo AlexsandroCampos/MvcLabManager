@@ -1,0 +1,23 @@
+@model MvcLabManager.Models.Computer
+
+@{
+    ViewData["Title"] = "Cadastrar computador";
+}
+
+<h1>Cadastrar computador</h1>
+
+<form method="post" asp-action="Create" class="form">
+    <div class="form-group">
+        <label for="Ram">Ram</label>
+        <input type="text" name="Ram" id="Ram" class="form-control">
+    </div>
+
+    <div>
+        <label for="Processor">Processador</label>
+        <input type="text" name="Processor" id="Processor" class="form-control">
+    </div>
+
+    <div>
+        <input type="submit" value="Enviar" class="btn btn-success mt-2">
+    </div>
+</form>

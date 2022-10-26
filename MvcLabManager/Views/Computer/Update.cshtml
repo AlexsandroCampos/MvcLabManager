@@ -1,0 +1,23 @@
+@model MvcLabManager.Models.Computer
+
+@{
+    ViewData["Title"] = "Atualizar computador";
+}
+
+<h1>Atualizar computador</h1>
+
+<form method="post" asp-action="Update">
+    <div>
+        <label for="Ram">Ram</label>
+        <input type="text" name="Ram" id="Ram" asp-for="@Model.Ram">
+    </div>
+
+    <div>
+        <label for="Processor">Processador</label>
+        <input type="text" name="Processor" id="Processor" asp-for="@Model.Processor">
+    </div>
+
+    <div>
+        <input type="submit" value="Enviar">
+    </div>
+</form>
