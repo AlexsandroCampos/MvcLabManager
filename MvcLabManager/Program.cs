@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // após builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<LabManagerContext>(options => 
-    options.UseMySQL("server=localhost;database=estudante;user=estudante;password=estudante")
+    options.UseMySQL("server=localhost;database=estudante;user=root;password=senha")
 );
 
 // Add services to the container.

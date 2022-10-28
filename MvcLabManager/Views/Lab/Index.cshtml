@@ -1,0 +1,49 @@
+@model List<MvcLabManager.Models.Lab>
+
+@{
+    ViewData["Title"] = "Laboratórios";
+}
+<div class="d-flex justify-content-between align-items-center">
+    <h1>Laboratórios cadastrados</h1>
+    <a class="btn btn-primary" asp-action="Create">Criar</a>
+</div>
+
+
+@if(Model.Count() == 0)
+{
+    <p>Nenhum laboratório cadastrado</p>
+}
+else 
+{
+    
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Número</th>
+                    <th>Bloco</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach(var lab in Model)
+                {
+                    
+                    <tr>
+                        <td>@lab.Id</td>
+                        <td>@lab.Name</td>
+                        <td>@lab.Number</td>
+                        <td>@lab.Block</td>
+                        <td><a class="btn btn-secondary" asp-action="Show" asp-route-id="@lab.Id">Detalhes</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table> 
+}
+
+
+
+
+
