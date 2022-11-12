@@ -7,17 +7,19 @@
 <h1>Atualizar computador</h1>
 
 <form method="post" asp-action="Update">
-    <div>
+    <div class="form-group">
         <label for="Ram">Ram</label>
-        <input type="text" name="Ram" id="Ram" asp-for="@Model.Ram">
+        <input type="text" id="Ram" asp-for="@Model.Ram" class="form-control">
+        <span asp-validation-for="@Model.Ram" class="text-danger"></span>
     </div>
 
-    <div>
+    <div class="form-group">
         <label for="Processor">Processador</label>
-        <input type="text" name="Processor" id="Processor" asp-for="@Model.Processor">
+        <input type="text" id="Processor" asp-for="@Model.Processor" class="form-control">
+        <span asp-validation-for="@Model.Processor" class="text-danger"></span>
     </div>
 
-    <div>
-        <input type="submit" value="Enviar">
+    <div class="form-group">
+        <input type="submit" value="Enviar" class="btn btn-success mt-2">
     </div>
 </form>

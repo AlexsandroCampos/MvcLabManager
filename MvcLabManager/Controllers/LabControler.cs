@@ -58,18 +58,12 @@ public class LabController : Controller
     [HttpPost]
     public IActionResult Update(Lab lab)
     {
-        Lab labSaved = _context.Labs.Find(lab.Id);
-
-        if(labSaved == null)
+        if(!ModelState.IsValid) 
         {
-            return NotFound();
+            return View(lab);
         }
 
-        labSaved.Name = lab.Name;
-        labSaved.Number = lab.Number;
-        labSaved.Block = lab.Block;
-
-        _context.Labs.Update(labSaved);
+        _context.Labs.Update(lab);
         _context.SaveChanges();
 
         return RedirectToAction("Index");
@@ -85,6 +79,10 @@ public class LabController : Controller
     [HttpPost]
     public IActionResult Create(Lab lab)
     {
+        if(!ModelState.IsValid) 
+        {
+            return View(lab);
+        }
         _context.Labs.Add(lab);
         _context.SaveChanges();
 

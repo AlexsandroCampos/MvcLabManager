@@ -10,16 +10,20 @@
     <div class="form-group">
         <label for="Name">Nome</label>
         <input type="text" name="Name" id="Name" class="form-control" asp-for="@Model.Name">
+        <span asp-validation-for="@Model.Name" class="text-danger"></span>
+
     </div>
 
     <div>
         <label for="Number">Número</label>
         <input type="text" name="Number" id="Number" class="form-control" asp-for="@Model.Number">
+        <span asp-validation-for="@Model.Number" class="text-danger"></span>
     </div>
 
     <div>
         <label for="Block">Bloco</label>
         <input type="text" name="Block" id="Block" class="form-control" asp-for="@Model.Block">
+        <span asp-validation-for="@Model.Block" class="text-danger"></span>
     </div>
 
     <div>

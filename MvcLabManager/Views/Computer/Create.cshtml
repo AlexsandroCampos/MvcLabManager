@@ -9,12 +9,14 @@
 <form method="post" asp-action="Create" class="form">
     <div class="form-group">
         <label for="Ram">Ram</label>
-        <input type="text" name="Ram" id="Ram" class="form-control">
+        <input type="text" asp-for="@Model.Ram" id="Ram" class="form-control">
+        <span asp-validation-for="@Model.Ram" class="text-danger"></span>
     </div>
 
     <div>
         <label for="Processor">Processador</label>
-        <input type="text" name="Processor" id="Processor" class="form-control">
+        <input type="text" asp-for="@Model.Processor" id="Processor" class="form-control">
+        <span asp-validation-for="@Model.Processor" class="text-danger"></span>
     </div>
 
     <div>

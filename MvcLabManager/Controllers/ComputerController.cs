@@ -58,17 +58,12 @@ public class ComputerController : Controller
     [HttpPost]
     public IActionResult Update(Computer computer)
     {
-        Computer computerSaved = _context.Computers.Find(computer.Id);
-
-        if(computerSaved == null)
+        if(!ModelState.IsValid) 
         {
-            return NotFound();
+            return View(computer);
         }
 
-        computerSaved.Processor = computer.Processor;
-        computerSaved.Ram = computer.Ram;
-
-        _context.Computers.Update(computerSaved);
+        _context.Computers.Update(computer);
         _context.SaveChanges();
 
         return RedirectToAction("Index");
@@ -84,6 +79,11 @@ public class ComputerController : Controller
     [HttpPost]
     public IActionResult Create(Computer computer)
     {
+        if(!ModelState.IsValid) 
+        {
+            return View(computer);
+        }
+        
         _context.Computers.Add(computer);
         _context.SaveChanges();
 

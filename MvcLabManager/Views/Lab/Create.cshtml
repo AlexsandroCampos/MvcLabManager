@@ -9,17 +9,20 @@
 <form method="post" asp-action="Create" class="form">
     <div class="form-group">
         <label for="Name">Nome</label>
-        <input type="text" name="Name" id="Name" class="form-control">
+        <input type="text" asp-for="@Model.Name" id="Name" class="form-control">
+        <span asp-validation-for="@Model.Name" class="text-danger"></span>
     </div>
 
-    <div>
+    <div class="form-group">
         <label for="Number">Número</label>
-        <input type="text" name="Number" id="Number" class="form-control">
+        <input type="text" asp-for="@Model.Number" id="Number" class="form-control">
+        <span asp-validation-for="@Model.Number" class="text-danger"></span>
     </div>
 
-    <div>
+    <div class="form-group">
         <label for="Block">Bloco</label>
-        <input type="text" name="Block" id="Block" class="form-control">
+        <input type="text" asp-for="@Model.Block" id="Block" class="form-control">
+        <span asp-validation-for="@Model.Block" class="text-danger"></span>
     </div>
 
     <div>
